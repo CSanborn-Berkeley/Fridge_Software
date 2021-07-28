@@ -1,0 +1,106 @@
+MDBoxLayout:
+    orientation: "vertical"
+
+    MDTabs:
+        id:TopTabs
+        Tab:
+            title: "Monitor"
+            icon: "monitor"
+
+            MDTabs:
+                id:MonitorTabs
+                Tab:
+                    icon:"speedometer"
+                    title:"Pressure"
+
+                    MDBoxLayout:
+                        orientation:"vertical"
+
+                        MDBoxLayout:
+                            orientation:'horizontal'
+
+                            MDIconButton:
+                                icon:"numeric-1-box"
+                                pos_hint:{"center_x":0.5,"center_y":0.5}
+                            MDLabel:
+                                text:'Pressure 1'
+
+                        MDBoxLayout:
+                            orientation:'horizontal'
+
+                            MDIconButton:
+                                icon:"numeric-2-box"
+                                pos_hint:{"center_x":0.5,"center_y":0.5}
+                            MDLabel:
+                                text:'Pressure 2'
+
+                        MDBoxLayout:
+                            orientation:'horizontal'
+
+                            MDIconButton:
+                                icon:"numeric-3-box"
+                                pos_hint:{"center_x":0.5,"center_y":0.5}
+                            MDLabel:
+                                text:'Pressure 3'
+
+                        MDBoxLayout:
+                            orientation:'horizontal'
+
+                            MDIconButton:
+                                icon:"numeric-4-box"
+                                pos_hint:{"center_x":0.5,"center_y":0.5}
+                            MDLabel:
+                                text:'Pressure 4'
+
+                        MDBoxLayout:
+                            orientation:'horizontal'
+
+                            MDIconButton:
+                                icon:"numeric-5-box"
+                                pos_hint:{"center_x":0.5,"center_y":0.5}
+                            MDLabel:
+                                text:'Pressure 5'
+
+                        MDBoxLayout:
+                            orientation:'horizontal'
+
+                            MDIconButton:
+                                icon:"numeric-6-box"
+                                pos_hint:{"center_x":0.5,"center_y":0.5}
+                            MDLabel:
+                                text:'Pressure 6'
+
+                Tab:
+                    icon:"approximately-equal"
+                    title:"Flow"
+                Tab:
+                    icon:"thermometer"
+                    title:"Temperature"
+        Tab:
+            icon: "graph"
+            title: "Measure"
+
+            MDTabs:
+                id:MeasurementTabs
+                on_tab_switch: app.on_measurement_tab_switch(*args)
+                on_ref_press: app.on_measurement_ref_press(*args)
+                Tab:
+                    icon:"plus"
+
+
+
+        Tab:
+            icon: "file-settings"
+            title: "Settings"
+
+            MDTabs:
+                id:SettingsTabs
+                Tab:
+                    icon:"bell-alert"
+                    title:"Alerts"
+                Tab:
+                    icon:"lan-connect"
+                    title:"Connections"
+                Tab:
+                    icon:"ruler"
+                    title:"Measurement Devices"
