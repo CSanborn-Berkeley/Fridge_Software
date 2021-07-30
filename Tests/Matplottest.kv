@@ -9,16 +9,15 @@ MDBoxLayout:
 
             MDTabs:
                 id:MonitorTabs
+
                 Tab:
-                    title:"Pressure"
                     icon:"speedometer"
+                    title:"Pressure"
+
                     MDBoxLayout:
                         orientation:'horizontal'
-                        icon:"speedometer"
-                        title:"Pressure"
 
                         MDBoxLayout:
-                            size_hint:(0.3,1)
                             orientation:"vertical"
 
                             MDBoxLayout:
@@ -76,92 +75,10 @@ MDBoxLayout:
                                     text:'Pressure 6'
 
                         PressureGraph:
-                            size_hint:(0.7,1)
                             id:PressureGraph
-
                 Tab:
                     icon:"approximately-equal"
                     title:"Flow"
-
-                    FlowGraph:
-                        id:FlowGraph
-
                 Tab:
                     icon:"thermometer"
                     title:"Temperature"
-
-                    TemperatureGraph:
-                        id:TemperatureGraph
-        Tab:
-            icon: "graph"
-            title: "Measure"
-
-            MDTabs:
-                id:MeasurementTabs
-                on_tab_switch: app.on_measurement_tab_switch(*args)
-                on_ref_press: app.on_measurement_ref_press(*args)
-
-                Tab:
-                    icon:"plus"
-                    MDLabel:
-                        halign:"center"
-                        valign:"center"
-                        text:"Press + to start a new measurement"
-                        font_style:"H4"
-
-        Tab:
-            icon: "file-settings"
-            title: "Settings"
-
-            MDTabs:
-                id:SettingsTabs
-                Tab:
-                    icon:"bell-alert"
-                    title:"Alerts"
-                    MDBoxLayout:
-                        halign:'center'
-                        orientation:"horizontal"
-                        MDBoxLayout:
-                            orientation:'vertical'
-                            MDBoxLayout:
-                                orientation:'horizontal'
-                                MDCheckbox:
-                                    width: dp(55)
-                                MDLabel:
-                                    text:"Alarm Text"
-                            MDBoxLayout:
-                                orientation:'horizontal'
-                                MDCheckbox:
-                                    width: dp(55)
-                                MDLabel:
-                                    text:"Alarm Text"
-                            MDBoxLayout:
-                                orientation:'horizontal'
-                                MDCheckbox:
-                                    width: dp(55)
-                                MDLabel:
-                                    text:"Alarm Text"
-                            MDBoxLayout:
-                                orientation:'horizontal'
-                                MDCheckbox:
-                                    width: dp(55)
-                                MDLabel:
-                                    text:"Alarm Text"
-                        MDLabel:
-                            halign:'center'
-                            text:"stuff on the right side"
-
-
-                Tab:
-                    icon:"lan-connect"
-                    title:"Connections"
-                Tab:
-                    icon:"ruler"
-                    title:"Measurement Devices"
-
-<MeasurementTab>
-    MDLabel:
-        halign:"center"
-        valign:"center"
-        text:"Blank Measurement Tab"
-        font_style:"H4"
