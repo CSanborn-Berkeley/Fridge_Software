@@ -17,7 +17,8 @@ from kivymd.font_definitions import fonts
 from kivymd.uix.tab import MDTabsBase
 from kivymd.icon_definitions import md_icons
 import matplotlib.pyplot as plt
-
+import FridgeFunctions
+import re
 
 
 class Tab(MDFloatLayout, MDTabsBase):
@@ -89,6 +90,7 @@ class TemperatureGraph(MDBoxLayout):
 class FridgeCenter(MDApp):
     icons = list(md_icons.keys())[15:30]
     MeasurementN = 1
+    CurrentMeasurements = list()
 
     def build(self):
         self.theme_cls.primary_palette = "Blue"
@@ -111,6 +113,23 @@ class FridgeCenter(MDApp):
             if instance_tab.text == TabsLabel.text:
                 MeasurementTabs.remove_widget(TabsLabel)
 
+    def on_measurement_button_press(instance_app):
+        for tab in instance_app.root.children[0].children[1].children[0].slides[1].children[0].children[1].children[0].slides:
+            if "Measurement" in tab.text:
+                measurement_n = re.sub("[\(\[].*?[\)\]]", "", tab.text).split(" ")[1]
+                print(measurement_n)
+            else:
+                measurement_n=0
+            for blayout1 in tab.children:
+                for blayout2 in blayout1.children:
+                    for widget in blayout2.children:
+                        try:
+                            if widget.font_size == "1200":
+                                if widget.active:
+                                    pass
+                                    #check if the measurement is already running, if not, start it
+                        except AttributeError:
+                            pass
 
 
 

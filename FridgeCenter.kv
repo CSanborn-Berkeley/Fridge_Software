@@ -129,24 +129,54 @@ MDBoxLayout:
                                     width: dp(55)
                                 MDLabel:
                                     text:"Alarm Text"
+                                MDTextField:
+                                    size_hint_x:None
+                                    width:"65dp"
+                                    pos_hint:{"center_x":0,"center_y":0.5}
+                                    helper_text:"Parameter"
+                                    helper_text_mode: "persistent"
                             MDBoxLayout:
                                 orientation:'horizontal'
                                 MDCheckbox:
                                     width: dp(55)
                                 MDLabel:
                                     text:"Alarm Text"
+                                MDTextField:
+                                    size_hint_x:None
+                                    width:"65dp"
+                                    pos_hint:{"center_x":0,"center_y":0.5}
+                                    helper_text:"Parameter"
+                                    helper_text_mode: "persistent"
+                                MDTextField:
+                                    size_hint_x:None
+                                    width:"65dp"
+                                    pos_hint:{"center_x":0,"center_y":0.5}
+                                    helper_text:"Parameter"
+                                    helper_text_mode: "persistent"
                             MDBoxLayout:
                                 orientation:'horizontal'
                                 MDCheckbox:
                                     width: dp(55)
                                 MDLabel:
                                     text:"Alarm Text"
+                                MDTextField:
+                                    size_hint_x:None
+                                    width:"65dp"
+                                    pos_hint:{"center_x":0,"center_y":0.5}
+                                    helper_text:"Parameter"
+                                    helper_text_mode: "persistent"
                             MDBoxLayout:
                                 orientation:'horizontal'
                                 MDCheckbox:
                                     width: dp(55)
                                 MDLabel:
                                     text:"Alarm Text"
+                                MDTextField:
+                                    size_hint_x:None
+                                    width:"65dp"
+                                    pos_hint:{"center_x":0,"center_y":0.5}
+                                    helper_text:"Parameter"
+                                    helper_text_mode: "persistent"
                         MDLabel:
                             halign:'center'
                             text:"stuff on the right side"
@@ -160,8 +190,27 @@ MDBoxLayout:
                     title:"Measurement Devices"
 
 <MeasurementTab>
-    MDLabel:
-        halign:"center"
-        valign:"center"
-        text:"Blank Measurement Tab"
-        font_style:"H4"
+    MDBoxLayout:
+        orientation:'vertical'
+        MDBoxLayout:
+            orientation:'horizontal'
+            pos_hint:{'center_x':0.5,'center_y':0.5}
+            size_hint:(0.9,0.1)
+            MDTextFieldRound:
+                id:textbox
+                pos_hint:{'center_y':0.5}
+                hint_text:"Enter Name of Python Script"
+                font_size:"22sp"
+            MDLabel:
+                id:blanklabel
+                text:" "
+            MDSwitch:
+                id:switch
+                pos_hint:{'center_x':1,'center_y':0.5}
+                font_style:'H5'
+                font_size:"1200"
+                on_release: app.on_measurement_button_press()
+
+
+        PressureGraph
+            size_hint:(0.975,0.9)
